@@ -1,0 +1,22 @@
+.coin-price-card {
+    width: 220px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .coin-price-card h2 {
+    margin-top: 0;
+  }
+  
+  .coin-price-card p {
+    margin: 5px 0;
+  }
+  
+  .coin-price-card p strong {
+    font-weight: bold;
+  }
+  

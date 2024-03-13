@@ -1,0 +1,27 @@
+.lang-container {
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px 0;
+  height: auto;
+  background-color: skyblue;
+  display: flex;
+  justify-content: space-around;
+}
+
+.lang-scroller {
+  overflow: auto;
+  
+   
+}
+
+.lang-item {
+  margin: 10px 0;
+}
+
+.lang-item.selected {
+  background-color: #e0e0e0; /* Example background color for the selected language */
+}
+
+

@@ -1,0 +1,31 @@
+.container {
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: skyblue;
+    display: flex;
+  justify-content: space-around;
+  }
+  
+  .scroller {
+    overflow: hidden;
+    
+    /* display: flex;
+    justify-content: space-around; */
+  }
+
+  .currency-list{
+    height: 200px;
+  }
+  
+  .item {
+    margin: 10px 0;
+  }
+  
+  .item.selected {
+    background-color: #e0e0e0; /* Example background color for the selected language */
+  }
+  
+  
