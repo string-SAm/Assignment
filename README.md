@@ -24,7 +24,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.\<img width="1680" alt="Screenshot 2024-03-13 at 3 16 20 PM" src="https://github.com/string-SAm/Assignment/assets/80837512/89f06ad1-6cbd-4aca-b8b4-f74062ff7b49">
+
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
