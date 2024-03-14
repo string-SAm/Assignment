@@ -47,9 +47,9 @@ const LanguageSelector: React.FC = () => {
   return (
     <div className='lang-container'>
       <div className='lang-scroller' onClick={toggleLanguageList}>
-        <span >
+        <span style={{ display:'flex',justifyContent:'space-around',gap:'10px'}}>
           <AiOutlineGlobal /> {selectedLanguage ? languages.find(lang => lang.slug === selectedLanguage)?.lang : 'Language Selector'} {isOpen ? <BsChevronUp /> : <BsChevronDown />}
-        </span>
+        </span >
         {isOpen && (
           <div className='lang-list'>
             {loading ? (

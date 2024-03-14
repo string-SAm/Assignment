@@ -9,6 +9,7 @@ interface MarketPair {
   coin_slug: string;
   last: number;
   volume:number;
+  change:number;
   // Add other properties according to the response data structure
 }
 
@@ -53,6 +54,7 @@ const CoinList: React.FC = () => {
                 <th>Last Price</th>
                 <th>Highest Bid</th>
                 <th>Lowest Ask</th>
+                <th>Change</th>
                 <th>Volume</th>
               </tr>
             </thead>
@@ -61,9 +63,10 @@ const CoinList: React.FC = () => {
                 return (
                   <tr key={pair.currency1}>
                     <td>{pair.coin_slug} - {pair.currency1}</td>
-                    <td>{pair.last}</td>
+                    <td style={pair.change>=0?{color:'green'}:{color:'red'}}>{pair.last}</td>
                     <td>{pair.highest_bid}</td>
                     <td>{pair.lowest_ask}</td>
+                    <td style={pair.change>=0?{color:'green'}:{color:'red'}}>{pair.change.toFixed(2)}</td>
                     <td>{pair.volume}</td>
                   </tr>
                 );

@@ -3,7 +3,6 @@ import CoinList from "./components/CoinList";
 import Navbar from "./components/Navbar";
 import CoinPriceCard from "./components/CoinPriceCard";
 import './App.css'
-import ScrollBar from "./components/ScrollBar";
 import Banner from "./components/Banner";
 import CurrencySelector from "./components/CurrencySelector";
 import LanguageSelector from "./components/LanguageSelector";
@@ -14,16 +13,17 @@ function App() {
       
       <LanguageSelector />
       <CurrencySelector/>
-
+      
       
       <div className="card-container" style={{display:'flex', justifyContent:'space-around', }}>
         <CoinPriceCard pairSymbol="ETHUSDT" />
         <CoinPriceCard pairSymbol="BTCUSDT" />
         <CoinPriceCard pairSymbol="XRPUSDT" />
       </div>
+      <Banner/>
       <CoinList />
-      {/* <Banner/> */}
-      {/* <ScrollBar/> */}
+      
+      
     </div>
   );
 }

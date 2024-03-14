@@ -46,7 +46,7 @@ const CurrencySelector: React.FC = () => {
   return (
     <div className='container'>
   <div className='scroller' onClick={toggleCurrencyList}>
-    <span>
+    <span style={{ display:'flex',justifyContent:'space-around',gap:'15px'}}>
       <AiOutlineGlobal /> {selectedCurrency ? selectedCurrency : 'Currency Selector'} {isOpen ? <BsChevronUp /> : <BsChevronDown />}
     </span>
     {isOpen && (
@@ -56,7 +56,7 @@ const CurrencySelector: React.FC = () => {
         ) : (
           currencies.map(currency => (
             <div key={currency.id} className={`item ${selectedCurrency === currency.id ? 'selected' : ''}`} onClick={() => handleCurrencySelect(currency.name)}>
-              {currency.name} {selectedCurrency === currency.id && <CiCircleCheck />}
+             {currency.symbol}-{currency.name} {selectedCurrency === currency.id && <CiCircleCheck />}
             </div>
           ))
         )}

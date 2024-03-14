@@ -5,12 +5,11 @@
     padding: 10px;
     margin: 10px 0;
     background-color: skyblue;
-    display: flex;
-  justify-content: space-around;
+  
   }
   
   .scroller {
-    overflow: hidden;
+    overflow: auto;
     
     /* display: flex;
     justify-content: space-around; */

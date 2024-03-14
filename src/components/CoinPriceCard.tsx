@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styled/CoinPriceCard.css'
+import LineChart from './Chart';
 
 interface CoinPrice {
   symbol: string;
@@ -8,11 +9,14 @@ interface CoinPrice {
   highest_bid: number;
   lowest_ask: number;
   change: number;
+  pricing: number[]; 
 }
 
 const CoinPriceCard: React.FC<{ pairSymbol: string }> = ({ pairSymbol }) => {
   const [coinPrice, setCoinPrice] = useState<CoinPrice | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+
+  
 
   useEffect(() => {
     const fetchCoinPrice = async () => {
@@ -42,16 +46,23 @@ const CoinPriceCard: React.FC<{ pairSymbol: string }> = ({ pairSymbol }) => {
   
     fetchCoinPrice();
   }, [pairSymbol]);
+
   
   return (
     <div className="coin-price-card">
       {loading ? (
         <p>Loading coin price...</p>
       ) : coinPrice ? (
-        <div>
-          <h2>{coinPrice.symbol}</h2>
-          <p>Last Price: {coinPrice.last}</p>
-          <p>{coinPrice.change.toFixed(2)}</p>
+        <div style={{display:'flex',justifyContent: "space-between"}}>
+          <div>
+          <h3>{coinPrice.symbol}</h3>
+          <p>$ {coinPrice.last}</p> 
+          <p style={coinPrice.change>=0?{color:'green'}:{color:'red'}}>{coinPrice.change.toFixed(2)}</p>
+          </div>
+          <div><LineChart data={{
+    data: coinPrice.pricing
+  }}/></div>
+          
         </div>
       ) : (
         <p>No data available</p>

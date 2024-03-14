@@ -6,8 +6,7 @@
   margin: 10px 0;
   height: auto;
   background-color: skyblue;
-  display: flex;
-  justify-content: space-around;
+  
 }
 
 .lang-scroller {
