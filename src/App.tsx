@@ -6,6 +6,7 @@ import './App.css'
 import Banner from "./components/Banner";
 import CurrencySelector from "./components/CurrencySelector";
 import LanguageSelector from "./components/LanguageSelector";
+import NewsLetter from "./components/Newsletter";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       </div>
       <Banner/>
       <CoinList />
-      
+      <NewsLetter/>
       
     </div>
   );

@@ -25,7 +25,7 @@ const Banner: React.FC = () => {
     const fetchBannerData = async () => {
       try {
         const response = await axios.get<{ data: { banners: BannerData[] } }>(
-          "https://api.bitdelta.com/api/v1/public/general"
+          "https://api-staging.bitdelta.com/api/v1/public/general"
         );
         setBannerData(response.data.data.banners);
         setLoading(false);
@@ -70,7 +70,14 @@ const Banner: React.FC = () => {
         <button onClick={handlePrevSlide}>
           <GrFormPrevious />
         </button>
-        <img src={window.innerWidth < 768 ? bannerData[currentSlide]?.mobile_url : bannerData[currentSlide]?.url } alt="Banner Image" />
+        <img
+          src={
+            window.innerWidth < 768
+              ? bannerData[currentSlide]?.mobile_url
+              : bannerData[currentSlide]?.url
+          }
+          alt="Banner Image"
+        />
 
         <button onClick={handleNextSlide}>
           <GrFormNext />

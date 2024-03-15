@@ -3,6 +3,7 @@ import Chart from 'chart.js/auto';
 
 interface LineChartData {
   data?: number[];
+  change:number;
 }
 
 interface LineChartProps {
@@ -10,6 +11,7 @@ interface LineChartProps {
 }
 
 const LineChart: React.FC<LineChartProps> = ({ data }) => {
+  const { change } = data;
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   const chartInstanceRef = useRef<Chart | null>(null);
 
@@ -25,19 +27,24 @@ const LineChart: React.FC<LineChartProps> = ({ data }) => {
     chartInstanceRef.current = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // Fixed labels
+        labels: Array.from({ length: data.data.length }, (_, i) => i + 1), // Fixed labels
         datasets: [{
           label: '',
           data: data.data,
           backgroundColor: 'transparent',
-          borderColor: '#2a7ae3',
+          borderColor: change >= 1 ? 'green' : 'red', // Set borderColor conditionally
           pointBorderColor: 'transparent',
           pointBorderWidth: 1,
-          tension: 0.4
+          tension: 0.5, 
+            pointRadius: 0, 
+            pointHoverRadius: 0,
         }]
-      },
+      }
+      ,
       options: {
+        
         plugins: {
+          
           legend: {
             display: false
           }
@@ -49,7 +56,9 @@ const LineChart: React.FC<LineChartProps> = ({ data }) => {
           y: {
             display: false
           }
-        }
+        },
+        responsive: true, // Disable responsiveness
+        maintainAspectRatio: true, // Disable aspect ratio
       }
     });
 

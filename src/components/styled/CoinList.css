@@ -75,7 +75,7 @@
     }
     .fl-table td, .fl-table th {
         padding: 20px .625em .625em .625em;
-        height: 60px;
+        height: 20%;
         vertical-align: middle;
         box-sizing: border-box;
         overflow-x: hidden;
